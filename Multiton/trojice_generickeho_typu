@@ -1,0 +1,17 @@
+package org.example;
+//Comparable rika ze jde vyrobit instanci tridi pouze s takovym datovym typem, ktery se umi porovnat
+public class Trojicka_generickeho_typu<T extends Comparable> {
+    T p1;
+    T p2;
+    T p3;
+
+    public Trojicka_generickeho_typu(T p1,T p2,T p3){
+        this.p1 = p1;
+        this.p2 = p2;
+        this.p3 = p3;
+    }
+
+    public String toString(){
+        return p1 + "\n" + p2 + "\n" +p3;
+    }
+}
