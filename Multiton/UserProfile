@@ -1,0 +1,27 @@
+package org.example;
+
+import java.util.HashMap;
+
+public class UserProfile {
+    private String userId;
+    private String jmeno;
+    private String prijmeni;
+    private String email;
+
+    private static HashMap<String, UserProfile> userProfileHashMap;
+
+    private static UserProfile userProfile;
+    private UserProfile(String userId) {
+        this.userId = userId;
+    }
+
+    public static UserProfile getInstance(String userId) {
+        if (null == userProfileHashMap) {
+            userProfileHashMap = new HashMap<>();
+        }
+        if (!userProfileHashMap.containsKey(userId)){
+            userProfileHashMap.put(userId, new UserProfile(userId));
+        }
+        return userProfileHashMap.get(userId);
+    }
+}
